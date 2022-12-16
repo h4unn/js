@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>연산</title>
+		<meta name="description" content="">
+		<meta name="author" content="user1">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+
+
+	<body>
+		<h2>문자열</h2>
+		<script>
+			var str = 'hello world';
+			var str1 = 'javascript';
+			var str2 = str.indexOf('world');
+
+			document.write(str+'<br>');
+			document.write(str1+'<br>');
+			document.write(str2+'<br>');
+		</script>
+		<h2>타이머</h2>
+		<script>
+			//setTimeOut(할일,시간);
+			//시간이 지나면 할일
+			//3초 3000
+			var timer = setTimeout(function(){
+				alert('dkdkdk');
+			},3000);
+			clearTimeout(timer);
+
+			//setInterval(할일,시간);
+
+			var timer2 = setInterval(function(){
+				alert('askdjsakd');
+			},3000);
+			clearInterval(timer2);
+		</script>
+
+
+	</body>
+</html>
