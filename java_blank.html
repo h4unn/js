@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>연산</title>
+		<meta name="description" content="">
+		<meta name="author" content="user1">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+
+
+	<body>
+		<script>
+			// var fruits = [];
+			// fruits[0] = 'apple';
+			// fruits[1] = '배';
+			// fruits[2] = '바나나';
+
+			var fruits = ['사과','배','바나나','딸기'];
+			var animals = ['사자','호랑이','곰'];
+
+			var amount = fruits.length;
+			var newStr = fruits.join('/'); //배열 각각 뒤에 붙는다
+			var newArr = fruits.reverse();
+			var newArr2 = fruits.sort(function(a,b){
+				return b-a;
+			});
+			var newArr3 = fruits.concat(animals); // a.concat(b) = a+b
+			var newArr4 = fruits.slice(1,3); 
+			
+
+			document.write(fruits+'<br/>');
+			document.write(fruits[0]+'<br/>');
+			document.write(amount+'<br/>');
+			document.write(newStr+'<br/>');
+			document.write(newArr+'<br/>');
+			document.write(newArr2+'<br/>');
+			document.write(newArr3+'<br/>');
+			document.write(newArr4+'<br/>');
+		</script>
+		
+
+	</body>
+</html>
