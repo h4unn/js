@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+</head>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<p id="demo">Let AJAX change this text.</p>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+<script>
+  function loadDoc() {
+    // var xhttp;
+    var xhttp, xmlDoc, txt, x;
+    xhttp = new XMLHttpRequest(); // request를 보내겠다~ (서버에 요청)
+
+    xhttp.onreadystatechange = function(){//서버에서 준비가 됬는지 물어보는 것
+      if(this.readyState == 4 && this.status == 200){//서버 준비 완료
+        // console.log(this.readyState);
+        // console.log(this.status);
+        // document.querySelector('#demo').innerHTML = this.responseText; 텍스트 바꾸기
+        xmlDoc = this.responseXML;
+        txt = '';
+        x = xmlDoc.getElementsByTagName('ARTIST');
+        console.log(x);
+        for(var i = 0; i < x.length ; i++){
+          txt = txt + x[i].childNodes[0].nodeValue + '<br>';
+        }
+        document.getElementById('demo').innerHTML = txt;
+      }
+    }
+
+    xhttp.open('get','cd_catalog.xml',true);
+    xhttp.send();
+
+  }
+</script>
+
+</body>
+</html>
+
+<!-- 
+  onreadystatechange >> proferty 값이 바뀌면 할 일
+
+  readystate 가 가질수 있는 모든 값의 목록 
+  0 : request 가 시작되지 않음
+  1 : 서버 연결이 완료됨
+  2 : 서버에서 request 요청을 받음
+  3 : request(요청) 처리중
+  4 : request에 대한 처리가 끝났고 브라우저로 보낼 반응이 준비됨
+
+  responseText : 실제 요청후 결과를 변수명으로 반환(함수밖으로 출력한다.)
+  responseXML : 실제 요철후 결과를 XML 데이터의 형식으로 반환한다
+
+  status 
+  200 : 이상없음
+  403 : 권한 x
+  404 : 파일을 찾을 수 없음
+-->
